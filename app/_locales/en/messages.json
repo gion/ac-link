@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "ac link",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "extenstion that adds a task link to the active collab task linking",
+    "description": "The description of the application"
+  }
+}
