@@ -5,7 +5,7 @@ console.log('\'Allo \'Allo! Content script');
 (function(global) {
     var $ = global.jQuery;
     var notify = global.notify;
-
+    var iconSrc = '//cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-128.png';
     var api = {
         name: 'Ac Task Link',
         namespace: 'ac-task-link',
@@ -21,7 +21,7 @@ console.log('\'Allo \'Allo! Content script');
                     .attr('href', link)
                     .attr('title', 'permalink')
                     .attr('target', '_blank')
-                    .html('<img class="gion-link" src="//icons.iconarchive.com/icons/visualpharm/icons8-metro-style/32/Debug-External-link-icon.png" style="width: 12px;height:auto;" alt="">')
+                    .html('<img class="gion-link" src="'+ iconSrc +'" style="width: 12px;height:auto;" alt="">')
                     .appendTo(
                         $(el).find('.task_options')
                             .clone()
