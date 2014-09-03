@@ -5,14 +5,16 @@ console.log('\'Allo \'Allo! Content script');
 (function(global) {
     var $ = global.jQuery;
     var notify = global.notify;
-    var iconSrc = '//cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-128.png';
+    // var iconSrc = '//cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-128.png';
+    var iconSrc = 'images/permalink.png';
     var api = {
         name: 'Ac Task Link',
         namespace: 'ac-task-link',
         version: '0.0.1',
         author: 'bogdan.gradinairu@gmail.com',
         detect: function(url) {
-            return url.indexOf('projects.xivic.com/public/index.php?path_info=projects') !== -1;
+            return /\.[a-z]{2-6}\/public\/index.php?path_info=projects/.test(url);
+            // return url.indexOf('projects.xivic.com/public/index.php?path_info=projects') !== -1;
         },
         work: function() {
             $('.objects_list_item').each(function(i, el) {
