@@ -37,7 +37,7 @@ install instruction
 4. Click on the *Load unpacked extension...*
 5. Browse to the **app** folder from the cloned/downloaded sources of this repo
 
-<img src="./app/images/chrome-extension-screenshot/chrome-extension-screenshot.png" />
+<img src="./app/images/chrome-extension-screenshot.png/chrome-extension-screenshot.png" />
 
 known issues
 ====
