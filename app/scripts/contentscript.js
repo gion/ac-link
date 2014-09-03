@@ -1,34 +1,34 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Content script');
-
 (function(global) {
     var $ = global.jQuery;
     var notify = global.notify;
-    // var iconSrc = '//cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-128.png';
-    var iconSrc = 'images/permalink.png';
+    var iconSrc = '//cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-128.png';
+    // var iconSrc = 'images/permalink.png';
     var api = {
         name: 'Ac Task Link',
         namespace: 'ac-task-link',
-        version: '0.0.1',
+        version: '0.1.0',
         author: 'bogdan.gradinairu@gmail.com',
         detect: function(url) {
-            return /\.[a-z]{2-6}\/public\/index.php?path_info=projects/.test(url);
+            return /\/public\/index\.php\?path_info=projects/.test(url);
             // return url.indexOf('projects.xivic.com/public/index.php?path_info=projects') !== -1;
         },
         work: function() {
             $('.objects_list_item').each(function(i, el) {
-                var link = $(el).attr('permalink');
+                var link = $(el).attr('permalink'),
+                    name = $(el).attr('_search_index');
+
                 $('<a>')
                     .attr('href', link)
-                    .attr('title', 'permalink')
+                    .attr('title', name)
                     .attr('target', '_blank')
-                    .html('<img class="gion-link" src="'+ iconSrc +'" style="width: 12px;height:auto;" alt="">')
+                    .html('<img class="ac-link-extension-link" src="'+ iconSrc +'" style="width: 12px;height:auto;" alt="">')
                     .appendTo(
                         $(el).find('.task_options')
                             .clone()
                             .empty()
-                            .addClass('gion-link-container')
+                            .addClass('ac-link-extension-link-container')
                             .insertAfter(
                                 $(el).find('.task_options')
                             )
@@ -60,15 +60,11 @@ console.log('\'Allo \'Allo! Content script');
 
     global.onload = function() {
         setTimeout(function() {
-            console.log('asdasdas');
+            console.log('Hello from ac-link!');
             api.main();
         }, 1000);
     };
 
     global.api = api;
-
-    console.log(global);
-    console.log(window);
-
 })(this);
 

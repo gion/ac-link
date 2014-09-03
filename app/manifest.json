@@ -46,6 +46,11 @@
             "all_frames": false
         }
     ],
+    "web_accessible_resources": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/jquery/dist/jquery.min.map",
+        "bower_components/HTML5-Desktop-Notifications/desktop-notify-min.js"
+    ],
     "permissions": [
         "tabs",
         "http://projects.xivic.com/*",
