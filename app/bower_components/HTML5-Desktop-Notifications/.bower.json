@@ -1,0 +1,13 @@
+{
+  "name": "HTML5-Desktop-Notifications",
+  "_release": "a4b050d71b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a4b050d71bd1627a25932f8b5adde3bb08bdae72"
+  },
+  "_source": "git@github.com:/ttsvetko/HTML5-Desktop-Notifications.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:/ttsvetko/HTML5-Desktop-Notifications.git",
+  "_direct": true
+}
